@@ -8,7 +8,8 @@ use Symfony\Component\Messenger\MessageBusInterface;
 use WernerDweight\RA\RA;
 
 /**
- * Class ScheduledMessenger
+ * Class ScheduledMessenger.
+ *
  * @SuppressWarnings(PHPMD.TooManyPublicMethods)
  */
 class ScheduledMessenger
