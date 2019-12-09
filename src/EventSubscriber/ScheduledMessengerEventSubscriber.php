@@ -7,13 +7,14 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpKernel\KernelEvents;
 use WernerDweight\ScheduledMessengerBundle\Service\ScheduledMessenger;
 
-class ScheduledMessengerEventSubscriber implements EventSubscriberInterface
+final class ScheduledMessengerEventSubscriber implements EventSubscriberInterface
 {
     /** @var ScheduledMessenger */
     private $scheduledMessenger;
 
     /**
      * ScheduledMessengerEventSubscriber constructor.
+     *
      * @param ScheduledMessenger $scheduledMessenger
      */
     public function __construct(ScheduledMessenger $scheduledMessenger)

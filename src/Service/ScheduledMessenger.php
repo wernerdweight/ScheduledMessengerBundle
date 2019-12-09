@@ -7,6 +7,10 @@ use Symfony\Component\HttpKernel\KernelEvents;
 use Symfony\Component\Messenger\MessageBusInterface;
 use WernerDweight\RA\RA;
 
+/**
+ * Class ScheduledMessenger
+ * @SuppressWarnings(PHPMD.TooManyPublicMethods)
+ */
 class ScheduledMessenger
 {
     /** @var MessageBusInterface */
@@ -17,6 +21,7 @@ class ScheduledMessenger
 
     /**
      * ScheduledMessenger constructor.
+     *
      * @param MessageBusInterface $messageBus
      */
     public function __construct(MessageBusInterface $messageBus)
@@ -34,9 +39,11 @@ class ScheduledMessenger
     }
 
     /**
-     * @param string $event
+     * @param string   $event
      * @param callable $callback
+     *
      * @return ScheduledMessenger
+     *
      * @throws \WernerDweight\RA\Exception\RAException
      */
     private function dispatchOn(string $event, callable $callback): self
@@ -47,7 +54,9 @@ class ScheduledMessenger
 
     /**
      * @param callable $messageCallback
+     *
      * @return ScheduledMessenger
+     *
      * @throws \WernerDweight\RA\Exception\RAException
      */
     public function dispatchOnController(callable $messageCallback): self
@@ -57,7 +66,9 @@ class ScheduledMessenger
 
     /**
      * @param callable $messageCallback
+     *
      * @return ScheduledMessenger
+     *
      * @throws \WernerDweight\RA\Exception\RAException
      */
     public function dispatchOnException(callable $messageCallback): self
@@ -67,7 +78,9 @@ class ScheduledMessenger
 
     /**
      * @param callable $messageCallback
+     *
      * @return ScheduledMessenger
+     *
      * @throws \WernerDweight\RA\Exception\RAException
      */
     public function dispatchOnFinishRequest(callable $messageCallback): self
@@ -77,7 +90,9 @@ class ScheduledMessenger
 
     /**
      * @param callable $messageCallback
+     *
      * @return ScheduledMessenger
+     *
      * @throws \WernerDweight\RA\Exception\RAException
      */
     public function dispatchOnRequest(callable $messageCallback): self
@@ -87,7 +102,9 @@ class ScheduledMessenger
 
     /**
      * @param callable $messageCallback
+     *
      * @return ScheduledMessenger
+     *
      * @throws \WernerDweight\RA\Exception\RAException
      */
     public function dispatchOnResponse(callable $messageCallback): self
@@ -97,7 +114,9 @@ class ScheduledMessenger
 
     /**
      * @param callable $messageCallback
+     *
      * @return ScheduledMessenger
+     *
      * @throws \WernerDweight\RA\Exception\RAException
      */
     public function dispatchOnTerminate(callable $messageCallback): self
@@ -107,7 +126,9 @@ class ScheduledMessenger
 
     /**
      * @param callable $messageCallback
+     *
      * @return ScheduledMessenger
+     *
      * @throws \WernerDweight\RA\Exception\RAException
      */
     public function dispatchOnView(callable $messageCallback): self
@@ -117,7 +138,9 @@ class ScheduledMessenger
 
     /**
      * @param string $event
+     *
      * @return RA
+     *
      * @throws \WernerDweight\RA\Exception\RAException
      */
     private function flush(string $event): RA
@@ -134,6 +157,7 @@ class ScheduledMessenger
 
     /**
      * @return RA
+     *
      * @throws \WernerDweight\RA\Exception\RAException
      */
     public function flushController(): RA
@@ -143,6 +167,7 @@ class ScheduledMessenger
 
     /**
      * @return RA
+     *
      * @throws \WernerDweight\RA\Exception\RAException
      */
     public function flushException(): RA
@@ -152,6 +177,7 @@ class ScheduledMessenger
 
     /**
      * @return RA
+     *
      * @throws \WernerDweight\RA\Exception\RAException
      */
     public function flushFinishRequest(): RA
@@ -161,6 +187,7 @@ class ScheduledMessenger
 
     /**
      * @return RA
+     *
      * @throws \WernerDweight\RA\Exception\RAException
      */
     public function flushRequest(): RA
@@ -170,6 +197,7 @@ class ScheduledMessenger
 
     /**
      * @return RA
+     *
      * @throws \WernerDweight\RA\Exception\RAException
      */
     public function flushResponse(): RA
@@ -179,6 +207,7 @@ class ScheduledMessenger
 
     /**
      * @return RA
+     *
      * @throws \WernerDweight\RA\Exception\RAException
      */
     public function flushTerminate(): RA
@@ -188,6 +217,7 @@ class ScheduledMessenger
 
     /**
      * @return RA
+     *
      * @throws \WernerDweight\RA\Exception\RAException
      */
     public function flushView(): RA
